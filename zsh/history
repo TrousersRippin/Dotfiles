@@ -1,0 +1,44 @@
+arp -a
+backup
+brew bundle
+brew bundle dump
+brew list
+diskutil mountDisk /dev/disk4
+diskutil unmountDisk /dev/disk4
+find -type f -exec chmod --changes 0644 {} \; -o -type d -exec chmod --changes 0755 {} \;
+ifconfig en0
+kickstart
+networkquality
+podman-tui
+restow
+ssh pve-03
+ssh pve-02
+ssh pve-01
+sudo nvram BootPreference=%00
+sudo touch -t 202509300900 /Applications/*
+tar -cvzf 
+tar -xvzf 
+tmav
+tmd
+tmk
+tmnh
+tmnv
+uname -a
+wol-pve-03
+wol-pve-02
+wol-pve-01
+wol-zimacube
+sudo killall -HUP mDNSResponder
+find . -type f -name ".DS_Store" -exec rm -rf {} +
+brew cleanup --prune=all
+brew upgrade --quiet
+update
+ssh ubuntu.local
+ssh debian.local
+ssh ubuntu
+ssh fedora
+ssh debian
+ssh debian-cloud-03
+ssh debian-cloud-02
+ssh debian-cloud-01
+ssh zimacube

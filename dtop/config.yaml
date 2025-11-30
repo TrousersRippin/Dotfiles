@@ -1,0 +1,4 @@
+hosts:
+  - host: ssh://troy@10.1.2.51
+    dozzle: http://10.1.2.51:8008
+sort: name
