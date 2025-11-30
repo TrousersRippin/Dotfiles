@@ -10,7 +10,7 @@ Ensure you have Git installed and sudo permissions on your system. The scripts w
 
 Pull the dotfiles repo into your home folder and run the install script for your distibution.
 ```bash
-git clone --quiet https://gitea.thenoisykeyboard.com/troy/dotfiles.git
+git clone --quiet https://github.com/trousersrippin/dotfiles.git
 ```
 Debian
 ```bash
