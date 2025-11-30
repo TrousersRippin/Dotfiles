@@ -63,7 +63,6 @@ CHOICES=( $(whiptail --separate-output --title "Linux software & dotfiles instal
     "htop" "system monitor" ON \
     "less" "terminal pager" ON \
     "nano" "code editor" ON \
-    "rclone" "file synchronisation" OFF \
     "starship" "terminal prompt (requires zsh)" ON \
     "vim" "code editor" ON \
     "wget" "network downloader" ON \
@@ -131,12 +130,6 @@ install_nano() {
     whiptail --title "Install completed" --msgbox "Nano installed and configuration restored." 10 80
 }
 
-install_rclone() {
-    sudo dnf install -y -q rclone > /dev/null 2>&1
-    cp -R dotfiles/rclone $HOME/.config
-    whiptail --title "Install completed" --msgbox "Rclone installed and configuration restored." 10 80
-}
-
 install_vim() {
     sudo dnf install -y -q vim > /dev/null 2>&1
     cp -R dotfiles/vim $HOME/.config &&
@@ -193,7 +186,6 @@ for choice in "${CHOICES[@]}"; do
         htop)           install_htop ;;
         less)           install_less ;;
         nano)           install_nano ;;
-        rclone)         install_rclone ;;
         starship)       install_starship ;;
         vim)            install_vim ;;
         wget)           install_wget ;;
