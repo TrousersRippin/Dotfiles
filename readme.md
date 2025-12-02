@@ -1,6 +1,6 @@
 # My Dotfiles
 
-This repository contains the dotfiles for my system and scripts to install the software.
+This repository contains the dotfiles for my Linux environment and scripts to install the software.
 
 # Requirements
 
