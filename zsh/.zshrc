@@ -4,7 +4,6 @@
 
 test -r "$XDG_CONFIG_HOME/dir_colors" && eval "$(dircolors "$XDG_CONFIG_HOME/dir_colors")"
 
-# Only useful on bare console TTYs
 if [[ "$TERM" == "linux" ]]; then
   echo -en "\e]P0000000" # black
   echo -en "\e]P9BF616A" # red
@@ -32,24 +31,14 @@ setopt notify
 setopt no_beep
 setopt no_case_glob
 
-STATIC_HISTFILE="$ZDOTDIR/history"
-touch $STATIC_HISTFILE
-HISTFILE=$STATIC_HISTFILE
 HISTSIZE=200
-SAVEHIST=0
-setopt HIST_NO_STORE
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_FIND_NO_DUPS
-fc -R $STATIC_HISTFILE
-
-#HISTSIZE=200
-#SAVEHIST="$HISTSIZE"
-#HISTFILE=$ZDOTDIR/history
-#HISTDUP=erase
-#setopt append_history inc_append_history
-#setopt hist_expire_dups_first hist_find_no_dups hist_ignore_dups
-#setopt hist_ignore_all_dups hist_ignore_space
-#setopt hist_reduce_blanks hist_save_no_dups hist_verify
+SAVEHIST="$HISTSIZE"
+HISTFILE=$ZDOTDIR/history
+HISTDUP=erase
+setopt append_history inc_append_history
+setopt hist_expire_dups_first hist_find_no_dups hist_ignore_dups
+setopt hist_ignore_all_dups hist_ignore_space
+setopt hist_reduce_blanks hist_save_no_dups hist_verify
 
 autoload -Uz compinit
 compinit
