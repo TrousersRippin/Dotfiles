@@ -16,6 +16,5 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
 export KUBECONFIG="$XDG_CONFIG_HOME/kube/config" 
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
