@@ -1,3 +1,5 @@
 hosts:
   - host: ssh://troy@192.168.23.100
     dozzle: http://192.168.23.100:8008
+
+icons: nerd
