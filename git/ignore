@@ -1,0 +1,7 @@
+*.DS_Store
+*.env
+*.gitignore
+*.network
+.stignore
+.stfolder
+rclone.conf

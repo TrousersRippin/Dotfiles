@@ -1,0 +1,36 @@
+# macOS
+alias wol-pve-01='wakeonlan e8:ff:1e:da:81:25'
+alias wol-pve-02='wakeonlan e8:ff:1e:de:4c:86'
+alias wol-pve-03='wakeonlan 78:55:36:00:8a:fb'
+alias wol-zimacube='wakeonlan 00:e0:4c:0f:0f:18'
+alias wol-tv='wakeonlan f8:01:b4:18:05:77'
+
+# Git
+alias ga='git add .'
+alias gc='git commit -m "updates"'
+alias gp='git push'
+alias gu='git pull'
+alias gs='git status'
+
+# Scripts
+alias backup='$XDG_DATA_HOME/scripts/data_backup.sh'
+alias secure='$XDG_DATA_HOME/scripts/secure_backup.sh'
+alias update='$XDG_DATA_HOME/scripts/git_update.sh'
+alias restow='$XDG_DATA_HOME/scripts/install_macos.sh'
+alias backup='$XDG_DATA_HOME/scripts/backup.sh'
+
+# Tmux
+alias tmav='tmux attach -t vertical'
+alias tmah='tmux attach -t horizontal'
+alias tmd='tmux detach'
+alias tmk='tmux kill-server'
+alias tmnv='tmux new-session -s vertical \; split-window -h \; split-window -v \; attach'
+alias tmnh='tmux new-session -s horizontal \; split-window -v \; split-window -h \; attach'
+alias tml='tmux list-sessions'
+
+# General
+alias ..='cd ..'
+alias cls='clear'
+alias ll='ls -aFhl'
+alias ls='ls --color=auto -h --group-directories-first'
+alias kickstart='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Kickstart'

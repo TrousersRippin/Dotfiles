@@ -1,0 +1,24 @@
+set atblanks
+set autoindent
+set constantshow
+set cutfromcursor
+set functioncolor yellow
+set keycolor blue
+set linenumbers
+set minibar
+set mouse
+set nohelp
+set numbercolor grey
+set positionlog
+set promptcolor blue
+set selectedcolor magenta
+set smarthome
+set stateflags
+set softwrap
+set tabsize 4
+set tabstospaces
+set titlecolor white,blue
+set trimblanks
+set whitespace "»⋅"
+
+include /opt/homebrew/share/nano/*.nanorc
