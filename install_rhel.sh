@@ -167,7 +167,6 @@ install_zsh() {
 install_starship() {
     curl -sS https://starship.rs/install.sh | sh
     cp -R dotfiles/starship $HOME/.config &&
-    sed -i -e 's/A3BE8C/5E81AC/g' $HOME/.config/starship/starship.toml
     whiptail --title "Install completed" --msgbox "Starship installed and configuration restored." 10 80
 }
 
