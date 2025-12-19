@@ -83,7 +83,6 @@ CHOICES=( $(whiptail --separate-output --title "Homebrew packages & dotfiles ins
     "rclone" "file synchronisation" ON \
     "tmux" "terminal multiplexer" ON \
     "vim" "code editor" ON \
-    "wget" "network downloader" ON \
     "zsh" "modern shell" ON \
     "starship" "terminal prompt - requires zsh" ON \
     "sane-defaults" "macOS sane defaults" ON \
@@ -204,12 +203,6 @@ install_vim() {
     whiptail --title "Install completed" --msgbox "Vim installed and configuration restored." 10 80
 }
 
-install_wget() {
-    brew install --quiet wget > /dev/null 2>&1
-    mkdir -p $HOME/.config/wget && stow --dir=$HOME/Documents/Tech/Dotfiles --target=$HOME/.config/wget wget --no-folding
-    whiptail --title "Install completed" --msgbox "Wget installed and configuration restored." 10 80
-}
-
 install_zsh() {
     brew install --quiet zsh > /dev/null 2>&1
     mkdir -p $HOME/.config/zsh && stow --dir=$HOME/Documents/Tech/Dotfiles --target=$HOME/.config/zsh zsh --no-folding
@@ -248,7 +241,6 @@ for choice in "${CHOICES[@]}"; do
         sane-defaults)  install_sane-defaults ;;
         tmux)           install_tmux ;;
         vim)            install_vim ;;
-        wget)           install_wget ;;
         zsh)            install_zsh ;;
         starship)       install_starship ;;
         *)              exit ;;

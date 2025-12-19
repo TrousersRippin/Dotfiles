@@ -65,7 +65,6 @@ CHOICES=( $(whiptail --separate-output --title "Linux software & dotfiles instal
     "nano" "code editor" ON \
     "starship" "terminal prompt (requires zsh)" ON \
     "vim" "code editor" ON \
-    "wget" "network downloader" ON \
     3>&1 1>&2 2>&3) )
 
 install_ansible() {
@@ -145,12 +144,6 @@ install_vim() {
     whiptail --title "Install completed" --msgbox "Vim installed and configuration restored." 10 80
 }
 
-install_wget() {
-    sudo apt-get install -y -qq wget > /dev/null 2>&1
-    cp -R dotfiles/wget $HOME/.config
-    whiptail --title "Install completed" --msgbox "Wget installed and configuration restored." 10 80
-}
-
 install_zsh() {
     sudo apt-get install -y -qq zsh > /dev/null 2>&1
     cp dotfiles/dir_colors/dir_colors $HOME/.config
@@ -186,7 +179,6 @@ for choice in "${CHOICES[@]}"; do
         nano)           install_nano ;;
         starship)       install_starship ;;
         vim)            install_vim ;;
-        wget)           install_wget ;;
         zsh)            install_zsh ;;
         *)              exit ;;
     esac
