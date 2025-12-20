@@ -132,7 +132,6 @@ install_nano() {
 install_vim() {
     sudo dnf install -y -q vim > /dev/null 2>&1
     cp -R dotfiles/vim $HOME/.config &&
-    sed -i -e '$d' $HOME/.config/vim/vimrc && echo "set rtp+=/usr/bin/fzf" >> $HOME/.config/vim/vimrc
     mkdir -p $HOME/.config/vim/after $HOME/.config/vim/autoload $HOME/.config/vim/pack/{itchyny,junegunn,ojroques,preservim,ryanoasis,tpope}/{start,opt} > /dev/null 2>&1
     git clone --quiet https://github.com/itchyny/lightline.vim    $HOME/.config/vim/pack/itchyny/start/lightline > /dev/null 2>&1
     git clone --quiet https://github.com/junegunn/fzf.vim         $HOME/.config/vim/pack/junegunn/start/fzf > /dev/null 2>&1
