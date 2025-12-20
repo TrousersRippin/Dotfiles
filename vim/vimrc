@@ -83,3 +83,7 @@ map <leader>fr :History<CR>
 map <leader>nn :set number!<CR>
 map <leader>ss :setlocal spell! spelllang=en_gb<CR>
 map <leader><space> :nohlsearch<CR>
+
+nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c_
+vmap <leader>c <Plug>OSCYankVisual

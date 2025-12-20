@@ -133,14 +133,14 @@ install_vim() {
     sudo apt-get install -y -qq vim > /dev/null 2>&1
     cp -R dotfiles/vim $HOME/.config &&
     sed -i -e '$d' $HOME/.config/vim/vimrc && echo "set rtp+=/usr/bin/fzf" >> $HOME/.config/vim/vimrc
-    mkdir -p $HOME/.config/vim/after $HOME/.config/vim/autoload > /dev/null 2>&1
-    mkdir -p $HOME/.config/vim/pack/{itchyny,junegunn,preservim,ryanoasis,tpope}/{start,opt} > /dev/null 2>&1
-    git clone --quiet https://github.com/itchyny/lightline.vim  $HOME/.config/vim/pack/itchyny/start/lightline > /dev/null 2>&1
-    git clone --quiet https://github.com/junegunn/fzf.vim       $HOME/.config/vim/pack/junegunn/start/fzf > /dev/null 2>&1
-    git clone --quiet https://github.com/preservim/nerdtree.git $HOME/.config/vim/pack/preservim/start/nerdtree > /dev/null 2>&1
-    git clone --quiet https://github.com/ryanoasis/vim-devicons $HOME/.config/vim/pack/ryanoasis/start/vim-devicons > /dev/null 2>&1
-    git clone --quiet https://github.com/tpope/vim-fugitive.git $HOME/.config/vim/pack/tpope/start/vim-fugitive > /dev/null 2>&1
-    git clone --quiet https://github.com/tpope/vim-sensible.git $HOME/.config/vim/pack/tpope/start/vim-sensible > /dev/null 2>&1
+    mkdir -p $HOME/.config/vim/after $HOME/.config/vim/autoload $HOME/.config/vim/pack/{itchyny,junegunn,ojroques,preservim,ryanoasis,tpope}/{start,opt} > /dev/null 2>&1
+    git clone --quiet https://github.com/itchyny/lightline.vim    $HOME/.config/vim/pack/itchyny/start/lightline > /dev/null 2>&1
+    git clone --quiet https://github.com/junegunn/fzf.vim         $HOME/.config/vim/pack/junegunn/start/fzf > /dev/null 2>&1
+    git clone --quiet https://github.com/ojroques/vim-oscyank.git $HOME/.config/vim/pack/ojroques/start/vim-oscyank > /dev/null 2>&1
+    git clone --quiet https://github.com/preservim/nerdtree.git   $HOME/.config/vim/pack/preservim/start/nerdtree > /dev/null 2>&1
+    git clone --quiet https://github.com/ryanoasis/vim-devicons   $HOME/.config/vim/pack/ryanoasis/start/vim-devicons > /dev/null 2>&1
+    git clone --quiet https://github.com/tpope/vim-fugitive.git   $HOME/.config/vim/pack/tpope/start/vim-fugitive > /dev/null 2>&1
+    git clone --quiet https://github.com/tpope/vim-sensible.git   $HOME/.config/vim/pack/tpope/start/vim-sensible > /dev/null 2>&1
     whiptail --title "Install completed" --msgbox "Vim installed and configuration restored." 10 80
 }
 
