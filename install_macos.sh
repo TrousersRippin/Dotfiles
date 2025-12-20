@@ -71,7 +71,6 @@ CHOICES=( $(whiptail --separate-output --title "Homebrew packages & dotfiles ins
     "bat" "text viewer" ON \
     "btop" "system monitor" ON \
     "curl" "network downloader" ON \
-    "dtop" "docker terminal user interface" ON \
     "duf" "disk usage viewer" ON \
     "fastfetch" "system information" ON \
     "ghostty" "terminal emulator" ON \
@@ -79,7 +78,6 @@ CHOICES=( $(whiptail --separate-output --title "Homebrew packages & dotfiles ins
     "htop" "system monitor" ON \
     "less" "terminal pager" ON \
     "nano" "code editor" ON \
-    "podman-tui" "podman terminal user interface" ON \
     "rclone" "file synchronisation" ON \
     "tmux" "terminal multiplexer" ON \
     "vim" "code editor" ON \
@@ -109,12 +107,6 @@ install_btop() {
 install_curl() {
     brew install --quiet curl > /dev/null 2>&1
     whiptail --title "Install completed" --msgbox "Curl installed and configuration restored." 10 80
-}
-
-install_dtop() {
-    brew install --quiet --cask amir20/homebrew-dtop/dtop > /dev/null 2>&1
-    mkdir -p $HOME/.config/dtop && stow --dir=$HOME/Documents/Tech/Dotfiles --target=$HOME/.config/dtop dtop
-    whiptail --title "Install completed" --msgbox "Dtop installed and configuration restored." 10 80
 }
 
 install_duf() {
@@ -163,12 +155,6 @@ install_nano() {
     brew install --quiet nano > /dev/null 2>&1
     mkdir -p $HOME/.config/nano && stow --dir=$HOME/Documents/Tech/Dotfiles --target=$HOME/.config/nano nano
     whiptail --title "Install completed" --msgbox "Nano installed and configuration restored." 10 80
-}
-
-install_podmantui() {
-    brew install --quiet podman-tui > /dev/null 2>&1
-    mkdir -p $HOME/.config/podman-tui && stow --dir=$HOME/Documents/Tech/Dotfiles --target=$HOME/.config/podman-tui podman-tui --no-folding
-    whiptail --title "Install completed" --msgbox "Podman-tui installed and configuration restored." 10 80
 }
 
 install_rclone() {
@@ -228,7 +214,6 @@ for choice in "${CHOICES[@]}"; do
         bat)            install_bat ;;
         btop)           install_btop ;;
         curl)           install_curl ;;
-        dtop)           install_dtop ;;
         duf)            install_duf ;;
         fastfetch)      install_fastfetch ;;
         ghostty)        install_ghostty ;;
@@ -237,7 +222,6 @@ for choice in "${CHOICES[@]}"; do
         htop)           install_htop ;;
         less)           install_less ;;
         nano)           install_nano ;;
-        podman-tui)     install_podmantui ;;
         rclone)         install_rclone ;;
         sane-defaults)  install_sane-defaults ;;
         tmux)           install_tmux ;;
