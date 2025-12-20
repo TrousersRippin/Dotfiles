@@ -13,9 +13,9 @@ alias gu='git pull'
 alias gs='git status'
 
 # Scripts
-alias backup='$XDG_DATA_HOME/scripts/data_backup.sh'
-alias secure='$XDG_DATA_HOME/scripts/secure_backup.sh'
-alias update='$XDG_DATA_HOME/scripts/git_update.sh'
+alias cloud-backup='$XDG_DATA_HOME/scripts/data_backup.sh'
+alias secure-back='$XDG_DATA_HOME/scripts/secure_backup.sh'
+alias update-git='$XDG_DATA_HOME/scripts/git_update.sh'
 alias restow='$XDG_DATA_HOME/scripts/install_macos.sh'
 alias backup='$XDG_DATA_HOME/scripts/backup.sh'
 
