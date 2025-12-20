@@ -66,7 +66,6 @@ source "$ZDOTDIR/aliases"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source <(fzf --zsh)
 
 if [[ "$TERM" == "linux" ]]; then
     source $ZDOTDIR/.zshrc-console
