@@ -164,6 +164,12 @@ install_starship() {
     whiptail --title "Install completed" --msgbox "Starship installed and configuration restored." 10 80
 }
 
+source /etc/os-release
+
+if [ "$ID" = "ubuntu" ]; then
+    sed -i -e 's/A3BE8C/D08770/g' $HOME/.config/starship/starship.toml
+fi
+
 for choice in "${CHOICES[@]}"; do
     case $choice in
         ansible)        install_ansible ;;
