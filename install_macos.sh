@@ -71,6 +71,7 @@ CHOICES=( $(whiptail --separate-output --title "Homebrew packages & dotfiles ins
     "bat" "text viewer" ON \
     "btop" "system monitor" ON \
     "curl" "network downloader" ON \
+    "dtop" "docker terminal user interface" ON \
     "duf" "disk usage viewer" ON \
     "fastfetch" "system information" ON \
     "ghostty" "terminal emulator" ON \
@@ -107,6 +108,12 @@ install_btop() {
 install_curl() {
     brew install --quiet curl > /dev/null 2>&1
     whiptail --title "Install completed" --msgbox "Curl installed and configuration restored." 10 80
+}
+
+install_dtop() {
+    brew install --quiet --cask amir20/homebrew-dtop/dtop > /dev/null 2>&1
+    mkdir -p $HOME/.config/dtop && stow --dir=$HOME/Documents/Tech/Dotfiles --target=$HOME/.config/dtop dtop
+    whiptail --title "Install completed" --msgbox "Dtop installed and configuration restored." 10 80
 }
 
 install_duf() {
@@ -214,6 +221,7 @@ for choice in "${CHOICES[@]}"; do
         bat)            install_bat ;;
         btop)           install_btop ;;
         curl)           install_curl ;;
+        dtop)           install_dtop ;;
         duf)            install_duf ;;
         fastfetch)      install_fastfetch ;;
         ghostty)        install_ghostty ;;

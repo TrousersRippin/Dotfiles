@@ -12,7 +12,6 @@ find . -type f -name ".DS_Store" -exec rm -rf {} +
 ifconfig en1
 kickstart
 networkquality
-podman-tui
 restow
 secure
 ssh debian
