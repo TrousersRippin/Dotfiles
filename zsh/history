@@ -14,13 +14,15 @@ kickstart
 networkquality
 restow
 secure
-ssh debian
+ssh debian.local
+ssh fedora.local
 ssh k3s-01
 ssh k3s-02
 ssh k3s-03
 ssh pve-01
 ssh pve-02
 ssh pve-03
+ssh ubuntu.local
 ssh zimacube
 sudo killall -HUP mDNSResponder
 sudo nvram BootPreference=%00
