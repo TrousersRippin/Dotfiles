@@ -1,0 +1,13 @@
+# Scripts
+alias cloud-backup='$XDG_DATA_HOME/scripts/cloud_backup.sh'
+alias secure-backup='$XDG_DATA_HOME/scripts/secure_backup.sh'
+alias git-update='$XDG_DATA_HOME/scripts/git_update.sh'
+alias restow='$XDG_DATA_HOME/scripts/restow.sh'
+
+# General
+alias ..='cd ..'
+alias cls='clear'
+alias ll='ls -aFhl'
+alias ls='ls --color=auto -h --group-directories-first'
+alias kickstart='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Kickstart'
+alias cat='bat'

@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+PROMPT='%F{green}%n%f@%F{green}%m%f%F{white}:%~%b%f %# '

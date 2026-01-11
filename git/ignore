@@ -1,0 +1,6 @@
+*.env
+*.gitignore
+.DS_Store
+.stignore
+.stfolder
+restow.sh
