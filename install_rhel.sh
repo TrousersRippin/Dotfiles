@@ -62,8 +62,7 @@ CHOICES=( $(whiptail --separate-output --title "Linux software & dotfiles instal
     "gnupg" "encryption software" OFF \
     "htop" "system monitor" ON \
     "less" "terminal pager" ON \
-    "nano" "code editor" OFF \
-    "starship" "terminal prompt (requires zsh)" ON \
+    "starship" "terminal prompt" ON \
     "vim" "code editor" ON \
     "zsh" "modern shell" ON \
     3>&1 1>&2 2>&3) )
@@ -117,17 +116,9 @@ install_less() {
     whiptail --title "Install completed" --msgbox "Less installed and configuration restored." 10 80
 }
 
-install_nano() {
-    sudo dnf install -y -q nano > /dev/null 2>&1
-    cp -R dotfiles/nano $HOME/.config &&
-    sed -i -e '$d' $HOME/.config/nano/nanorc && echo "include /usr/share/nano/*.nanorc" >> $HOME/.config/nano/nanorc
-    whiptail --title "Install completed" --msgbox "Nano installed and configuration restored." 10 80
-}
-
 install_starship() {
     curl -sS https://starship.rs/install.sh | sh
     cp -R dotfiles/starship/starship.toml $HOME/.config
-    sed -i -e 's/A3BE8C/5E81AC/g' $HOME/.config/starship.toml
     whiptail --title "Install completed" --msgbox "Starship installed and configuration restored." 10 80
 }
 
@@ -140,7 +131,6 @@ install_vim() {
     git clone --quiet https://github.com/ojroques/vim-oscyank.git $HOME/.config/vim/pack/ojroques/start/vim-oscyank > /dev/null 2>&1
     git clone --quiet https://github.com/preservim/nerdtree.git   $HOME/.config/vim/pack/preservim/start/nerdtree > /dev/null 2>&1
     git clone --quiet https://github.com/ryanoasis/vim-devicons   $HOME/.config/vim/pack/ryanoasis/start/vim-devicons > /dev/null 2>&1
-    git clone --quiet https://github.com/tpope/vim-fugitive.git   $HOME/.config/vim/pack/tpope/start/vim-fugitive > /dev/null 2>&1
     git clone --quiet https://github.com/tpope/vim-sensible.git   $HOME/.config/vim/pack/tpope/start/vim-sensible > /dev/null 2>&1
     whiptail --title "Install completed" --msgbox "Vim installed and configuration restored." 10 80
 }
@@ -170,7 +160,6 @@ for choice in "${CHOICES[@]}"; do
         gnupg)          install_gnupg ;;
         htop)           install_htop ;;
         less)           install_less ;;
-        nano)           install_nano ;;
         starship)       install_starship ;;
         vim)            install_vim ;;
         zsh)            install_zsh ;;
