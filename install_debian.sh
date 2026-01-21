@@ -59,7 +59,7 @@ CHOICES=( $(whiptail --separate-output --title "Linux software & dotfiles instal
     "curl" "network downloader" ON \
     "duf" "disk usage viewer" ON \
     "fastfetch" "system information" ON \
-    "gnupg" "encryption software" OFF \
+    "gnupg" "encryption software" ON \
     "htop" "system monitor" ON \
     "less" "terminal pager" ON \
     "starship" "terminal prompt" ON \
@@ -97,6 +97,7 @@ install_fastfetch() {
 }
 
 install_gnupg() {
+    sudo apt-get install -y -qq gpg > /dev/null 2>&1
     mkdir -p $HOME/.local/share/gnupg
     touch $HOME/.local/share/gnupg/gpg-agent.service
     echo '[Service]
