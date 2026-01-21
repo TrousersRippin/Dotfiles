@@ -1,7 +1,7 @@
 # Scripts
 alias cloud-backup='$XDG_DATA_HOME/scripts/cloud_backup.sh'
-alias git-update='$XDG_DATA_HOME/scripts/git_update.sh'
 alias secure-backup='$XDG_DATA_HOME/scripts/secure_backup.sh'
+alias git-update='$XDG_DATA_HOME/scripts/git_update.sh'
 alias restow='$XDG_DATA_HOME/scripts/restow.sh'
 
 # Tmux
@@ -13,10 +13,6 @@ alias tmnv='tmux new-session -s vertical \; split-window -h \; split-window -v \
 alias tmnh='tmux new-session -s horizontal \; split-window -v \; split-window -h \; attach'
 alias tml='tmux list-sessions'
 
-# WireGuard
-alias wgu='wg-quick up laptop'
-alias wgd='wg-quick down laptop'
-
 # General
 alias ..='cd ..'
 alias cls='clear'
@@ -24,3 +20,10 @@ alias ll='ls -aFhl'
 alias ls='ls --color=auto -h --group-directories-first'
 alias kickstart='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Kickstart'
 alias cat='bat'
+
+# Git
+alias ga='git add .'
+alias gc='git commit -m "updates"'
+alias gp='git push'
+alias gu='git pull'
+alias gs='git status'
