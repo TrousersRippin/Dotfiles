@@ -36,3 +36,7 @@
     showUntrackedFiles = all
     verbose = true
     aheadBehind = true
+
+[user]
+	name = Troy Rippin
+	email = troy_rippin@icloud.com
