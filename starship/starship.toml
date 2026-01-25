@@ -21,7 +21,7 @@ $rust\
 [](fg:#88C0D0 bg:#81A1C1)\
 $docker_context\
 [](fg:#81A1C1 bg:#A3BE8C)\
-$time\
+$hostname\
 [ ](fg:#A3BE8C)\
 """
 command_timeout = 5000
@@ -123,7 +123,12 @@ style = "bg:#88C0D0"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R" # Hour:Minute Format
 style = "bg:#A3BE8C"
 format = '[ $time ]($style)'
+
+[hostname]
+ssh_only = false
+style = "bg:#A3BE8C"
+format = '[ $hostname ]($style)'
