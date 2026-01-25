@@ -13,6 +13,7 @@ export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
 export KUBECONFIG="$XDG_CONFIG_HOME/kube/config"
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 #export VAULT_ADDR='http://127.0.0.1:8200'
