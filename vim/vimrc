@@ -85,6 +85,9 @@ set incsearch hlsearch
 set wildmenu wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.DS_Store
 
+filetype plugin indent on
+syntax on
+
 " Leader key
 let mapleader = " "
 
