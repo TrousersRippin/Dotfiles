@@ -14,12 +14,6 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-#export CONSUL_HTTP_ADDR='127.0.0.1:8500'
-#export NOMAD_ADDR='http://127.0.0.1:4646'
-#export TERRAFORM_HTTP_ADDR='127.0.0.1:***'
-#export VAULT_ADDR='http://127.0.0.1:8200'
-#
-#export CONSUL_CONFIG_DIR="${XDG_CONFIG_HOME}/consul"
-#export NOMAD_CONFIG_DIR="${XDG_CONFIG_HOME}/nomad"
-#export TERRAFORM_CONFIG_DIR="${XDG_CONFIG_HOME}/terraform"
-#export VAULT_CONFIG_PATH="${XDG_CONFIG_HOME}/vault"
+export CONSUL_HTTP_ADDR='https://consul.thenoisykeyboard.com'
+export NOMAD_ADDR='https://nomad.thenoisykeyboard.com'
+export VAULT_ADDR='https://vault.thenoisykeyboard.com'
