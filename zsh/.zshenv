@@ -14,6 +14,9 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
+export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
+export KUBECONFIG="$XDG_CONFIG_HOME/kube/config"
+
 export CONSUL_HTTP_ADDR='https://consul.thenoisykeyboard.com'
 export NOMAD_ADDR='https://nomad.thenoisykeyboard.com'
 export VAULT_ADDR='https://vault.thenoisykeyboard.com'
