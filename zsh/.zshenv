@@ -18,6 +18,7 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 # HashiCorp
 export CONSUL_HTTP_ADDR='https://consul.thenoisykeyboard.com'
 export NOMAD_ADDR='https://nomad.thenoisykeyboard.com'
+export TERRAFORM_ADDR='https://terraform.thenoisykeyboard.com'
 export VAULT_ADDR='https://vault.thenoisykeyboard.com'
 
 # Kube
