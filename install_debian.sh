@@ -120,8 +120,11 @@ install_less() {
 install_starship() {
     sudo apt-get install -y -qq starship > /dev/null 2>&1
     cp dotfiles/starship/starship.toml $HOME/.config
-    sed -i -e 's/A3BE8C/BF616A/g' $HOME/.config/starship.toml
-    #sed -i -e 's/BF616A/D08770/g' $HOME/.config/starship.toml
+    if grep -qi "ubuntu" /etc/os-release; then
+        sed -i -e 's/A3BE8C/BF616A/g' $HOME/.config/starship.toml
+    else
+        sed -i -e 's/A3BE8C/D08770/g' $HOME/.config/starship.toml
+    fi
     whiptail --title "Install completed" --msgbox "Starship installed and configuration restored." 10 80
 }
 
