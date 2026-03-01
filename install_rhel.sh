@@ -42,7 +42,7 @@ function check_whiptail() {
     if command -v whiptail >/dev/null 2>&1; then
         echo -e "${yellow}[ INFO ]${reset} Whiptail already installed."
     else
-        sudo dnf install -y -q whiptail > /dev/null 2>&1
+        sudo dnf install -y -q newt > /dev/null 2>&1
         echo -e "${green}[ NOTICE ]${reset} Whiptail has been installed."
     fi
 }
