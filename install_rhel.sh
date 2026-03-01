@@ -119,7 +119,9 @@ install_less() {
 install_starship() {
     curl -sS https://starship.rs/install.sh | sh
     cp -R dotfiles/starship/starship.toml $HOME/.config
-    sed -i -e 's/A3BE8C/5E81AC/g' $HOME/.config/starship.toml
+    if grep -qi "fedora" /etc/os-release; then
+        sed -i 's/A3BE8C/5E81AC/g' "$HOME/.config/starship.toml"
+    fi
     whiptail --title "Install completed" --msgbox "Starship installed and configuration restored." 10 80
 }
 
