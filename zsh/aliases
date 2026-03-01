@@ -18,8 +18,8 @@ alias ..='cd ..'
 alias cls='clear'
 alias ll='ls -aFhl'
 alias ls='ls --color=auto -h --group-directories-first'
+alias cat='batcat'
 alias kickstart='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Kickstart'
-alias cat='bat'
 
 # Git
 alias ga='git add .'
