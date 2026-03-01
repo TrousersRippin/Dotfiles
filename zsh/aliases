@@ -27,3 +27,10 @@ alias gc='git commit -m "updates"'
 alias gp='git push'
 alias gu='git pull'
 alias gs='git status'
+
+# Wake-on-Lan
+alias wol-node-01='wakeonlan e8:ff:1e:da:81:25'
+alias wol-node-02='wakeonlan e8:ff:1e:de:4c:86'
+alias wol-node-03='wakeonlan 78:55:36:00:8a:fb'
+alias wol-tv='wakeonlan f8:01:b4:18:05:77'
+alias wol-zimacube='wakeonlan 00:e0:4c:0f:0f:18'
