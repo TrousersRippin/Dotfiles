@@ -20,9 +20,9 @@ $nim\
 $rust\
 [](fg:#88C0D0 bg:#81A1C1)\
 $docker_context\
-[](fg:#81A1C1 bg:#7A9A63)\
-$hostname\
-[ ](fg:#7A9A63)\
+[](fg:#81A1C1 bg:#A3BE8C)\
+$time\
+[ ](fg:#A3BE8C)\
 """
 command_timeout = 5000
 # Disable the blank line at the start of the prompt
@@ -123,13 +123,7 @@ style = "bg:#88C0D0"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
-disabled = true
+disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#7A9A63"
+style = "bg:#A3BE8C"
 format = '[ $time ]($style)'
-
-[hostname]
-ssh_only = false
-style = "bg:#7A9A63"
-format = '[ $hostname ]($style)'
-

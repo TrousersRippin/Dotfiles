@@ -66,10 +66,7 @@ source "$XDG_CONFIG_HOME/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 if [[ "$TERM" == "linux" ]] || [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
-    source "$ZDOTDIR/.zshrc-console"
-elif [[ $(systemd-detect-virt 2>/dev/null) == "lxc" ]]; then
-    export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship-lxc.toml"
-    eval "$(starship init zsh)"
+    source $ZDOTDIR/.zshrc-console
 else
     eval "$(starship init zsh)"
 fi
