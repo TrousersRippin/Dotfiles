@@ -65,32 +65,11 @@ source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# Detect console, VM, or LXC container — fall back to simple prompt
-_use_console_prompt() {
-    # Raw linux console (no unicode/nerd font support)
-    [[ "$TERM" == "linux" ]] && return 0
-
-    # Starship not installed
-    (( ! $+commands[starship] )) && return 0
-
-    # LXC container: check /proc/1/environ (no systemd-detect-virt needed)
-    if [[ -r /proc/1/environ ]]; then
-        tr '\0' '\n' < /proc/1/environ 2>/dev/null | grep -q '^container=lxc' && return 0
-    fi
-
-    # VM or other container via systemd-detect-virt
-    if (( $+commands[systemd-detect-virt] )); then
-        local virt
-        virt=$(systemd-detect-virt 2>/dev/null)
-        [[ "$virt" != "none" ]] && return 0
-    fi
-
-    return 1
-}
-
-if _use_console_prompt; then
+if [[ "$TERM" == "linux" ]] || [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
     source "$ZDOTDIR/.zshrc-console"
+elif [[ $(systemd-detect-virt 2>/dev/null) == "lxc" ]]; then
+    export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship-lxc.toml"
+    eval "$(starship init zsh)"
 else
     eval "$(starship init zsh)"
 fi
-unfunction _use_console_prompt
