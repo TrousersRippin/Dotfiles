@@ -1,7 +1,5 @@
-# Load dircolors if available
 test -r "$XDG_CONFIG_HOME/dir_colors" && eval "$(dircolors "$XDG_CONFIG_HOME/dir_colors")"
 
-# Linux console colors
 if [[ "$TERM" == "linux" ]]; then
   echo -en "\e]P0000000" # black
   echo -en "\e]P9BF616A" # red
@@ -13,7 +11,6 @@ if [[ "$TERM" == "linux" ]]; then
   echo -en "\e]PFE5E9F0" # white
 fi
 
-# Key bindings, options, and history
 bindkey -e
 autoload -U zmv
 alias zmv='noglob zmv -W'
@@ -41,7 +38,6 @@ setopt hist_reduce_blanks hist_save_no_dups hist_verify
 
 autoload -Uz compinit
 
-# Zsh completion styles
 zstyle ':completion:*' matcher-list \
   'm:{a-zA-Z}={A-Za-z}' \
   'r:|[._-]=* r:|=*' \
@@ -64,20 +60,37 @@ zstyle ':completion:*' rehash true
 
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 
-# Plugins
 source "$ZDOTDIR/aliases"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh"
 source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# -----------------------------
-# Safe prompt detection
-# -----------------------------
-# If inside a minimal container or VM, use a simple safe prompt
-if [[ -f /.dockerenv ]] || [[ -f /run/.containerenv ]] || [[ "$TERM" == "linux" ]]; then
-    # Minimal / safe prompt
-    PROMPT='%n@%m %1~ %# '
+# Detect console, VM, or LXC container — fall back to simple prompt
+_use_console_prompt() {
+    # Raw linux console (no unicode/nerd font support)
+    [[ "$TERM" == "linux" ]] && return 0
+
+    # Starship not installed
+    (( ! $+commands[starship] )) && return 0
+
+    # LXC container: check /proc/1/environ (no systemd-detect-virt needed)
+    if [[ -r /proc/1/environ ]]; then
+        tr '\0' '\n' < /proc/1/environ 2>/dev/null | grep -q '^container=lxc' && return 0
+    fi
+
+    # VM or other container via systemd-detect-virt
+    if (( $+commands[systemd-detect-virt] )); then
+        local virt
+        virt=$(systemd-detect-virt 2>/dev/null)
+        [[ "$virt" != "none" ]] && return 0
+    fi
+
+    return 1
+}
+
+if _use_console_prompt; then
+    source "$ZDOTDIR/.zshrc-console"
 else
-    # Full Starship prompt
     eval "$(starship init zsh)"
 fi
+unfunction _use_console_prompt
