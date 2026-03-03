@@ -11,5 +11,8 @@ export LANG="en_GB.UTF-8"
 # GPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
+# Vim
+# export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
 # ZSH
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
