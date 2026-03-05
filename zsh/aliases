@@ -20,6 +20,7 @@ alias ll='ls -aFhl'
 alias ls='ls --color=auto -h --group-directories-first'
 alias cat='bat'
 alias flush='sudo killall -HUP mDNSResponder'
+alias cloud-init='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Cloud-init'
 alias kickstart='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Kickstart'
 
 # Git

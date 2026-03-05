@@ -179,7 +179,7 @@ done
 # Post-Install
 function post_install() {
     if whiptail --title "Post Install" --yesno "Do you want to run user post install?" 10 80; then
-        rm $HOME/.bash_logout $HOME/.bash_profile $HOME/.bashrc $HOME/.profile> /dev/null 2>&1
+        rm $HOME/.bash_logout $HOME/.bash_profile $HOME/.bashrc $HOME/.profile $HOME/.zcompdump> /dev/null 2>&1
         touch $HOME/.hushlogin
         echo -e "${red}[ NOTICE ]${reset} Post install completed."
     else
