@@ -1,6 +1,7 @@
 auto-update = download
 auto-update-channel = stable
 bold-is-bright = true
+clipboard-paste-protection = false
 copy-on-select = clipboard
 cursor-style = block
 cursor-style-blink = true
