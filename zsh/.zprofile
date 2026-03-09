@@ -7,6 +7,7 @@ export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/gnu-which/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH="/opt/homebrew/opt/findutils/libexec/gnuman:$MANPATH"
