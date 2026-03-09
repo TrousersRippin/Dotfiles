@@ -3,4 +3,5 @@
 .DS_Store
 .stignore
 .stfolder
+pgpass
 restow.sh
