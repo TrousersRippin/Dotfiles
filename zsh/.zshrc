@@ -29,7 +29,7 @@ setopt no_case_glob
 
 HISTSIZE=200
 SAVEHIST="$HISTSIZE"
-HISTFILE="${XDG_STATE_HOME}/zsh/history"
+HISTFILE="${XDG_STATE_HOME}/zsh/zsh_history"
 HISTDUP=erase
 setopt append_history inc_append_history
 setopt hist_expire_dups_first hist_find_no_dups hist_ignore_dups
