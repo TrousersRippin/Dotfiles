@@ -11,7 +11,17 @@ if [[ "$TERM" == "linux" ]]; then
   echo -en "\e]PFE5E9F0" # white
 fi
 
-bindkey -e
+bindkey -v
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^F' forward-char
+bindkey '^B' backward-char
+bindkey '^W' backward-kill-word
+bindkey '^K' kill-line
+bindkey '^U' backward-kill-line
+bindkey '^[f' forward-word
+bindkey '^[b' backward-word
+
 autoload -U zmv
 alias zmv='noglob zmv -W'
 
@@ -30,7 +40,6 @@ setopt no_case_glob
 HISTSIZE=200
 SAVEHIST="$HISTSIZE"
 HISTFILE="${XDG_STATE_HOME}/zsh/zsh_history"
-HISTDUP=erase
 setopt append_history inc_append_history
 setopt hist_expire_dups_first hist_find_no_dups hist_ignore_dups
 setopt hist_ignore_all_dups hist_ignore_space
