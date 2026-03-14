@@ -1,39 +1,7 @@
-# Scripts
-alias cloud-backup='$XDG_DATA_HOME/scripts/cloud_backup.sh'
-alias secure-backup='$XDG_DATA_HOME/scripts/secure_backup.sh'
-alias git-update='$XDG_DATA_HOME/scripts/git_update.sh'
-alias restow='$XDG_DATA_HOME/scripts/restow.sh'
-
-# Tmux
-alias tmav='tmux attach -t vertical'
-alias tmah='tmux attach -t horizontal'
-alias tmd='tmux detach'
-alias tmk='tmux kill-server'
-alias tmnv='tmux new-session -s vertical \; split-window -h \; split-window -v \; attach'
-alias tmnh='tmux new-session -s horizontal \; split-window -v \; split-window -h \; attach'
-alias tml='tmux list-sessions'
-
 # General
 alias ..='cd ..'
 alias cls='clear'
 alias ll='ls -aFhl'
 alias ls='ls --color=auto -h --group-directories-first'
-alias cat='bat'
+alias cat='batcat'
 alias svim='sudo -E vim'
-alias flush='sudo killall -HUP mDNSResponder'
-alias cloud-init='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Cloud-init'
-alias kickstart='python3 -m http.server 80 -d $HOME/Documents/Tech/Scripts/Kickstart'
-
-# Git
-alias ga='git add .'
-alias gc='git commit -m "updates"'
-alias gp='git push'
-alias gu='git pull'
-alias gs='git status'
-
-# Wake-on-Lan
-alias wol-node-01='wakeonlan e8:ff:1e:da:81:25'
-alias wol-node-02='wakeonlan e8:ff:1e:de:4c:86'
-alias wol-node-03='wakeonlan 78:55:36:00:8a:fb'
-alias wol-tv='wakeonlan f8:01:b4:18:05:77'
-alias wol-zimacube='wakeonlan 00:e0:4c:0f:0f:18'
