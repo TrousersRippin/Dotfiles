@@ -153,7 +153,6 @@ install_zsh() {
     git clone --quiet https://github.com/zsh-users/zsh-syntax-highlighting.git  $HOME/.config/zsh/plugins/zsh-syntax-highlighting > /dev/null 2>&1
     ln -s $HOME/.config/zsh/.zshenv $HOME/.zshenv
     rm $HOME/.config/zsh/.zprofile
-    sed -i "$ s/.*/alias cat='batcat'/" $HOME/.config/zsh/aliases
     sudo chsh -s $(which zsh) $USER > /dev/null 2>&1
     whiptail --title "Install completed" --msgbox "ZSH installed and configuration restored." 10 80
 }
