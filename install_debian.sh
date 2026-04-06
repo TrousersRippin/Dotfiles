@@ -64,6 +64,7 @@ CHOICES=( $(whiptail --separate-output --title "Linux software & dotfiles instal
     "less" "terminal pager" ON \
     "starship" "terminal prompt" ON \
     "vim" "code editor" ON \
+    "wget" "network downloader" ON \
     "zsh" "modern shell" ON \
     3>&1 1>&2 2>&3) )
 
@@ -81,7 +82,7 @@ install_btop() {
 
 install_curl() {
     sudo apt-get install -y -qq curl > /dev/null 2>&1
-    whiptail --title "Install completed" --msgbox "Curl installed and configuration restored." 10 80
+    whiptail --title "Install completed" --msgbox "Curl installed." 10 80
 }
 
 install_duf() {
@@ -143,6 +144,11 @@ install_vim() {
     whiptail --title "Install completed" --msgbox "Vim installed and configuration restored." 10 80
 }
 
+install_wget() {
+    sudo apt-get install -y -qq wget > /dev/null 2>&1
+    whiptail --title "Install completed" --msgbox "Wget installed." 10 80
+}
+
 install_zsh() {
     mkdir -p $HOME/.cache/zsh $HOME/.local/state/zsh
     sudo apt-get install -y -qq zsh > /dev/null 2>&1
@@ -170,6 +176,7 @@ for choice in "${CHOICES[@]}"; do
         less)           install_less ;;
         starship)       install_starship ;;
         vim)            install_vim ;;
+        wget)           install_wget ;;
         zsh)            install_zsh ;;
         *)              exit ;;
     esac

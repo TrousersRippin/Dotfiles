@@ -56,7 +56,6 @@ CHOICES=( $(whiptail --separate-output --title "Linux software & dotfiles instal
     "Select packages to install" 0 80 10 \
     "bat" "text viewer" ON \
     "btop" "system monitor" ON \
-    "curl" "network downloader" ON \
     "duf" "disk usage viewer" OFF \
     "fastfetch" "system information" ON \
     "gnupg" "encryption software" OFF \
@@ -77,11 +76,6 @@ install_btop() {
     sudo dnf install -y -q btop > /dev/null 2>&1
     cp -R dotfiles/btop $HOME/.config
     whiptail --title "Install completed" --msgbox "Btop installed and configuration restored." 10 80
-}
-
-install_curl() {
-    sudo dnf install -y -q curl > /dev/null 2>&1
-    whiptail --title "Install completed" --msgbox "Curl installed and configuration restored." 10 80
 }
 
 install_duf() {
@@ -158,7 +152,6 @@ for choice in "${CHOICES[@]}"; do
     case $choice in
         bat)            install_bat ;;
         btop)           install_btop ;;
-        curl)           install_curl ;;
         duf)            install_duf ;;
         fastfetch)      install_fastfetch ;;
         git)            install_git ;;
