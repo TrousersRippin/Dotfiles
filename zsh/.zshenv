@@ -7,7 +7,7 @@ export EDITOR="vim"
 export VISUAL="vim"
 
 export LANG="en_GB.UTF-8"
-export TERM="xterm-256color"
+export TERM="${TERM:-xterm-256color}"
 
 # Ansible
 export ANSIBLE_HOME="$XDG_CONFIG_HOME/ansible"
