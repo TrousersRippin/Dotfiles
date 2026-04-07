@@ -3,5 +3,33 @@ alias ..='cd ..'
 alias cls='clear'
 alias ll='ls -aFhl'
 alias ls='ls --color=auto -h --group-directories-first'
-alias cat='batcat'
+alias cat='bat'
+alias flush='sudo killall -HUP mDNSResponder'
 alias svim='sudo vim'
+alias autoinstall='python3 -m http.server 80 -d $HOME/Documents/Tech/Provisioning/Autoinstall'
+alias kickstart='python3 -m http.server 80 -d $HOME/Documents/Tech/Provisioning/Kickstart'
+alias preseed='python3 -m http.server 80 -d $HOME/Documents/Tech/Provisioning/Preseed'
+
+# Ansible
+alias server-update='ansible-playbook $HOME/Documents/Tech/Configuration/Ansible-Playbook/server/update/playbook.yaml -i $HOME/Documents/Tech/Configuration/Ansible-Playbook/server/update/inventory.yaml --key-file $HOME/.ssh/id_ed25519'
+
+# Git
+alias ga='git add .'
+alias gc='git commit -m "updates"'
+alias gp='git push'
+alias gu='git pull'
+alias gs='git status'
+
+# Scripts
+alias cloud-backup='$XDG_DATA_HOME/scripts/cloud_backup.sh'
+alias git-update='$XDG_DATA_HOME/scripts/git_update.sh'
+alias restow='$XDG_DATA_HOME/scripts/restow.sh'
+
+# Tmux
+alias tmav='tmux attach -t vertical'
+alias tmah='tmux attach -t horizontal'
+alias tmd='tmux detach'
+alias tmk='tmux kill-server'
+alias tmnv='tmux new-session -s vertical \; split-window -h \; split-window -v \; attach'
+alias tmnh='tmux new-session -s horizontal \; split-window -v \; split-window -h \; attach'
+alias tml='tmux list-sessions'
