@@ -16,5 +16,10 @@ export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 # GPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
+# PostgreSQL
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+export PSQL_HISTORY="$XDG_STATE_HOME/pg/psql_history"
+
 # ZSH
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
