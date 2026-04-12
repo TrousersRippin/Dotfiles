@@ -16,6 +16,10 @@ export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible/ansible.cfg"
 # GPG
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
+# Lima
+export LIMA_CACHE_HOME="$XDG_CACHE_HOME/lima"
+export LIMA_HOME="$XDG_DATA_HOME/lima"
+
 # PostgreSQL
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
