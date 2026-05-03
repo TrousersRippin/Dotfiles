@@ -111,7 +111,8 @@ install_less() {
 }
 
 install_starship() {
-  curl -sS https://starship.rs/install.sh | sh
+  #curl -sS https://starship.rs/install.sh | sh
+  sudo dnf install -y -q starship > /dev/null 2>&1
   cp -R dotfiles/starship/starship.toml $HOME/.config
   if grep -qi '^ID=\("fedora"\|fedora\)' /etc/os-release; then
     sed -i -e 's/7A9A63/5E81AC/g' "$HOME/.config/starship.toml"
